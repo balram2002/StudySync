@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.top-buttons-container {
+    position: relative;
+    z-index: 999999999;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 0;
+    /* Optional: add a subtle background if needed */
+    background: transparent;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
