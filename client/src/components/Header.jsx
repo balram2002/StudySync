@@ -121,7 +121,7 @@ const Header = () => {
               </motion.button>
 
               <motion.button
-                onClick={() => handleNavigation('learning-paths')}
+                onClick={() => navigate('/dashboard/plan')}
                 variants={navItemVariants}
                 initial="initial"
                 whileHover="hover"
@@ -150,7 +150,8 @@ const Header = () => {
                   : 'text-gray-300 hover:text-white'
                   }`}
               >
-                Community
+
+                <a href="https://github.com/TechQuanta" target='blank'>Community</a>
                 <motion.span
                   className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full ${theme === 'light' ? 'bg-purple-500' : 'bg-purple-400'
                     }`}
