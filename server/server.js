@@ -7,16 +7,6 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
-app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:5000"],
-    methods: ["POST", "GET"],
-    credentials: true
-}));
-
-app.use(express.json({ limit: "15mb" }));
-
-const dbHOST = process.env.MONGO_DB_URL;
-
 mongoose
     .connect(dbHOST, {
         // useNewUrlParser: true,
@@ -28,6 +18,16 @@ mongoose
     .catch((err) => {
         console.log(err.message);
     });
+
+app.use(cors({
+    origin: ["http://localhost:5173", "http://localhost:5000"],
+    methods: ["POST", "GET"],
+    credentials: true
+}));
+
+app.use(express.json({ limit: "15mb" }));
+
+const dbHOST = process.env.MONGO_DB_URL;
 
 app.get('/', (req, res) => {
     res.send('products api running new deploy');
