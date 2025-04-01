@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import cors from "cors";
 import userRoutes from "./routes/Routes.js";
 import express from "express";
 import dotenv from "dotenv";
@@ -23,18 +22,6 @@ mongoose
         console.error("DB Connection Error:", err.message);
         process.exit(1); // Exit process with failure
     });
-
-// Enhanced CORS configuration
-app.use(cors({
-    origin: [
-        "http://localhost:5173",
-        "http://localhost:5000",
-        // Add your Vercel frontend URL here when deployed
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true
-}));
 
 // Body parser middleware
 app.use(express.json({ limit: "15mb" }));
