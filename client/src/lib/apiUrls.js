@@ -1,4 +1,4 @@
-export const backendDomin = "http://localhost:5000"
+export const backendDomin = "https://studysync-uiks.onrender.com"
 
 const SummaryApi = {
     addUserPreferences: {
